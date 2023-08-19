@@ -54,9 +54,10 @@ def generatepassword():
 def strengthcheck():
     password = input("Enter the password:")
     if (len(password) >= 3):
-        if (bool(re.match('((?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[!@#$%^&*]).{3,100})', password)) == True):
+        if (bool(re.match('((?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[!@#$%^&|*]).{3,100})', password)) == True):
             print("The password is strong")
-        elif (bool(re.match('((\d*)([a-z]*)([A-Z]*)([!@#$%^&*]*).{3,100})', password)) == True):
+        # elif (bool(re.match('((\d*)([a-z]*)([A-Z]*)([!@#$%^&*]*).{3,100})', password)) == True):
+        else:
             print("The password is weak")
     else:
         print("You have entered an invalid password.")
